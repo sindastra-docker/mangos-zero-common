@@ -4,7 +4,7 @@ WORKDIR /mangos/src/
 RUN git clone git://github.com/sindastra/mangos-zero-server.git --recursive --depth 1 server
 
 WORKDIR /mangos/src/server/build
-RUN cmake .. -DCMAKE_INSTALL_PREFIX=/mangos/zero -DBUILD_TOOLS=0 -DPLAYERBOTS=0 -DSOAP=0 -DDEBUG=0
+RUN cmake .. -DCMAKE_INSTALL_PREFIX=/mangos/zero -DBUILD_TOOLS=1 -DPLAYERBOTS=1 -DSOAP=0 -DDEBUG=0
 RUN make -j `nproc` install
 
 WORKDIR /mangos/zero/etc/
